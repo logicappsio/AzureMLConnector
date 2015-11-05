@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Microsoft-ApiAppcde28b4addff4144a568b16edc48ab83" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\Dropbox\\Career\\Microsoft\\AzureML\\Logic\ App\\BESConnector\\BESConnector\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\Dropbox\\Career\\Microsoft\\AzureML\\Logic\ App\\BESConnector\\BESConnector\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+</parameters>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AzureMLConnector</name>
+    </assembly>
+    <members>
+        <member name="M:AzureMLConnector.Controllers.AzureBlobDataReference.SetFullURL">
+            <summary>
+            Create full link for Blob output 
+            </summary>
+        </member>
+        <member name="M:AzureMLConnector.Controllers.BatchScoreStatus.SetAdditionInformation">
+            <summary>
+            Set two more Informations
+            1. Status Descriton
+            2. Set full link for each output.
+            </summary>
+        </member>
+        <member name="M:AzureMLConnector.Controllers.EvaluatesController.AzureBlobDataReference.SetFullURL">
+            <summary>
+            Create full link for Blob output 
+            </summary>
+        </member>
+    </members>
+</doc>
