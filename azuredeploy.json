@@ -49,7 +49,8 @@
   },
   "variables": {
     "$packageId": "Microsoft.ApiApp",
-    "$nugetFeed": "http://apiapps-preview.nuget.org/api/v2/"
+    "$nugetFeed": "http://apiapps-preview.nuget.org/api/v2/",
+    "$gatewayToApiAppSecret": "QXp1cmVNTEFQSUFwcA=="
   },
   "resources": [
     {
@@ -227,7 +228,7 @@
             },
             {
               "name": "EMA_Secret",
-              "value": "[parameters('gatewayToAPIappSecret')]"
+              "value": "[variables('$gatewayToAPIappSecret')]"
             },
             {
               "name": "EMA_RuntimeUrl",
