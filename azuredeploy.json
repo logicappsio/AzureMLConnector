@@ -13,10 +13,12 @@
       "type": "string"
     },
     "repoURL": {
-      "type": "string"
+      "type": "string",
+      "defaultValue": "https://github.com/logicappsio/AzureMLConnector"
     },
     "branch": {
-      "type": "string"
+      "type": "string",
+      "defaultValue": "master"
     },
     "svcPlanName": {
       "type": "string"
