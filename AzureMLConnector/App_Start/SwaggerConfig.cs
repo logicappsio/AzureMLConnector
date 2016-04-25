@@ -82,7 +82,6 @@ namespace AzureMLConnector
 
                         // Set this flag to omit descriptions for any actions decorated with the Obsolete attribute
                         //c.IgnoreObsoleteActions();
-
                         // Each operation be assigned one or more tags which are then used by consumers for various reasons.
                         // For example, the swagger-ui groups operations according to the first tag of each operation.
                         // By default, this will be controller name but you can use the "GroupActionsBy" option to
@@ -151,8 +150,8 @@ namespace AzureMLConnector
                         // Set filter to eliminate duplicate operation ids from being generated
                         // when there are multiple operations with the same verb in the API.
                         //
-                        c.OperationFilter<IncludeParameterNamesInOperationIdFilter>();
-                        c.OperationFilter<AddDefaultValues>();
+                     //   c.OperationFilter<IncludeParameterNamesInOperationIdFilter>();
+                                     //       c.OperationFilter<AddDefaultValues>();
 
                         // Post-modify the entire Swagger document by wiring up one or more Document filters.
                         // This gives full control to modify the final SwaggerDocument. You should have a good understanding of
@@ -234,24 +233,24 @@ namespace AzureMLConnector
         }
     }
 
-    internal class IncludeParameterNamesInOperationIdFilter : IOperationFilter
-    {
-        public void Apply(Operation operation, SchemaRegistry schemaRegistry, ApiDescription apiDescription)
-        {
-            if (operation.parameters != null)
-            {
-                // Select the capitalized parameter names
-                var parameters = operation.parameters.Select(
-                    p => CultureInfo.InvariantCulture.TextInfo.ToTitleCase(p.name));
+    //internal class IncludeParameterNamesInOperationIdFilter : IOperationFilter
+    //{
+    //    public void Apply(Operation operation, SchemaRegistry schemaRegistry, ApiDescription apiDescription)
+    //    {
+    //        if (operation.parameters != null)
+    //        {
+    //            // Select the capitalized parameter names
+    //            var parameters = operation.parameters.Select(
+    //                p => CultureInfo.InvariantCulture.TextInfo.ToTitleCase(p.name));
 
-                // Set the operation id to match the format "OperationByParam1AndParam2"
-                operation.operationId = string.Format(
-                    "{0}By{1}",
-                    operation.operationId,
-                    string.Join("And", parameters));
-            }
-        }
-    }
+    //            // Set the operation id to match the format "OperationByParam1AndParam2"
+    //            operation.operationId = string.Format(
+    //                "{0}By{1}",
+    //                operation.operationId,
+    //                string.Join("And", parameters));
+    //        }
+    //    }
+    //}
 
     public class SwaggerDefaultValue : Attribute
     {

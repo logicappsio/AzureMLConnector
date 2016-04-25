@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using TRex.Metadata;
+using Newtonsoft.Json.Linq;
 
 namespace AzureMLConnector.Controllers
 {
@@ -25,16 +26,22 @@ namespace AzureMLConnector.Controllers
         //[SwaggerDefaultValue("Model_URI", "@{body('besconnector').Results.output2.FullURL}")]
         //[SwaggerDefaultValue("Evaluate_Output_Path", "@{body('besconnector').Results.output1.FullURL}")]
         public async Task<HttpResponseMessage> Post(
-            [Metadata("Retrained Model URL", "This should be the URL of the *.ilearner file which is the output of the call to the Retraining Endpoint")] string Model_URI,
+            [Metadata("Retrained Results", "This should be the results from the BES Output")] JObject Results,
+            [Metadata("Trained Model Output Name", "The name of the trained model output from BES")]string trainedOutputName,
+
             [Metadata("Scoring Web Service URL", "This is the new endpoint's Patch URL which you can get from Azure Portal's web service Dashboard. It is also returned when you call the AddEndpoint method to create the endpoint using the APIs")] string WebService_URL,
+       
             [Metadata("Scoring Web Service Key", "This is the API Key of the new endpoint which you can get from Azure Portal's web service Dashboard")] string WebService_Key,
+           
             [Metadata("Resource Name", "Saved Trained Model Name e.g. MyTrainedModel [trained model]")] string Resource_Name,
-            [Metadata("Evaluate Model Output Path", "The URL of the output of the Evaluate model. You can get this value from the output of the BES Connector call")] string Evaluate_Output_Path = "",
+                          [Metadata("Evaluation Model Output NAme", "The name of the evaluation model from BES")]  string evaluateOutputName = "",
             [Metadata("Evaluation Result Key", "The name of the parameter from the Evaluate Module result. Use the Visualize option of the module in the experiment to get the list of available keys to use here.")] string Evaluate_Key = "",
             [Metadata("Evaluation Condition", "Use to set the condition for the threshold for retraining.")] string Compare = "",
             [Metadata("Evaluation Value", "The threshold value of the Evaluation Result Key.")] double Evaluate_Condition = 0
             )
         {
+            string Evaluate_Output_Path = evaluateOutputName == "" ? "" : (string)Results[evaluateOutputName]["FullURL"];
+            string Model_URI = (string)Results[trainedOutputName]["FullURL"];
             bool passEvaluate = CheckEvaluate(Evaluate_Output_Path, Evaluate_Key, Compare, Evaluate_Condition);
             ResponeObject Robj = new ResponeObject();
             if (passEvaluate)
