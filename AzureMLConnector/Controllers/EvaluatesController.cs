@@ -35,10 +35,10 @@ namespace AzureMLConnector.Controllers
             [Metadata("Scoring Web Service Key", "This is the API Key of the new endpoint which you can get from Azure Portal's web service Dashboard")] string WebService_Key,
            
             [Metadata("Resource Name", "Saved Trained Model Name e.g. MyTrainedModel [trained model]")] string Resource_Name,
-                          [Metadata("Evaluation Model Output NAme", "The name of the evaluation model from BES")]  string evaluateOutputName = "",
-            [Metadata("Evaluation Result Key", "The name of the parameter from the Evaluate Module result. Use the Visualize option of the module in the experiment to get the list of available keys to use here.")] string Evaluate_Key = "",
-            [Metadata("Evaluation Condition", "Use to set the condition for the threshold for retraining.")] string Compare = "",
-            [Metadata("Evaluation Value", "The threshold value of the Evaluation Result Key.")] double Evaluate_Condition = 0
+                          [Metadata("Evaluate Model Output NAme", "The name of the evaluation model from BES")]  string evaluateOutputName = "",
+            [Metadata("Evaluate Result Key", "The name of the parameter from the Evaluate Module result. Use the Visualize option of the module in the experiment to get the list of available keys to use here.")] string Evaluate_Key = "",
+            [Metadata("Evaluate Condition", "Use to set the condition for the threshold for retraining.")] string Compare = "",
+            [Metadata("Evaluate Value", "The threshold value of the Evaluation Result Key.")] double Evaluate_Condition = 0
             )
         {
             string Evaluate_Output_Path = evaluateOutputName == "" ? "" : (string)body[evaluateOutputName]["FullURL"];
