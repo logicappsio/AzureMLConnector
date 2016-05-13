@@ -13,6 +13,7 @@ namespace AzureMLConnector.Controllers
     public class BES3_InputController : ApiController
     {
         [Metadata("Batch Job With only Input", "Experiment has a web service input module, but no web service output module (e.g. uses a Writer module")]
+        [Swashbuckle.Swagger.Annotations.SwaggerResponse(HttpStatusCode.OK, "Finish", typeof(BatchScoreStatus))]
         [Swashbuckle.Swagger.Annotations.SwaggerResponseRemoveDefaults]
         [HttpPost, Route("api/OnlyInput")]
         public async Task<HttpResponseMessage> Post(

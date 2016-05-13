@@ -13,6 +13,7 @@ namespace AzureMLConnector.Controllers
     public class BES2_NoneController : ApiController
     {
         [Metadata("Batch Job No Input and Output", "Experiment does not have web service input or output module (e.g. uses a Reader and Writer module")]
+        [Swashbuckle.Swagger.Annotations.SwaggerResponse(HttpStatusCode.OK, "Finish", typeof(BatchScoreStatus))]
         [Swashbuckle.Swagger.Annotations.SwaggerResponseRemoveDefaults]
         [HttpPost, Route("api/None")]
         public async Task<HttpResponseMessage> Post(

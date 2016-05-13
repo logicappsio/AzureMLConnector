@@ -20,6 +20,7 @@ namespace AzureMLConnector.Controllers
     public class EvaluatesController : ApiController
     {
         [Metadata("Set Up Retraining", "Set up a one-time or scheduled retraining of your ML model.")]
+        [Swashbuckle.Swagger.Annotations.SwaggerResponse(HttpStatusCode.OK, "Finish", typeof(ResponeObject))]
         [HttpPost, Route("api/Retraining")]
         [ResponseType(typeof(ResponeObject))]
         //[SwaggerDefaultValue("Compare", "<", "<,<=,>,>=,=")]
