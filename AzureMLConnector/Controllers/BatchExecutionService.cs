@@ -1,5 +1,6 @@
 ﻿using AzureMLConnector.Models;
 using Microsoft.WindowsAzure.Storage;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -53,7 +54,6 @@ namespace AzureMLConnector.Controllers
 
 
                 //Submitting the job...
-
                 // submit the job
                 var response = await client.PostAsJsonAsync(BaseUrl + "?" + strApiVersion, request);
                 if (!response.IsSuccessStatusCode)

@@ -26,7 +26,7 @@ namespace AzureMLConnector.Controllers
         //[SwaggerDefaultValue("Model_URI", "@{body('besconnector').Results.output2.FullURL}")]
         //[SwaggerDefaultValue("Evaluate_Output_Path", "@{body('besconnector').Results.output1.FullURL}")]
         public async Task<HttpResponseMessage> Post(
-            [Metadata("Retrained Results", "This should be the results from the BES Output")] JObject Results,
+            [Metadata("Retrained Results", "This should be the results from the BES Output")][FromBody] JObject Results,
             [Metadata("Trained Model Output Name", "The name of the trained model output from BES")]string trainedOutputName,
 
             [Metadata("Scoring Web Service URL", "This is the new endpoint's Patch URL which you can get from Azure Portal's web service Dashboard. It is also returned when you call the AddEndpoint method to create the endpoint using the APIs")] string WebService_URL,

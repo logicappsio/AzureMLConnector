@@ -171,16 +171,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="apiapp.json" />
-    <None Include="Properties\PublishProfiles\AzureMLConnector%28Default-Web-NorthCentralUS%29.pubxml" />
-    <None Include="Properties\PublishProfiles\AzureMLConnector2%28Default-Web-NorthCentralUS%29.pubxml" />
-    <None Include="Properties\PublishProfiles\BESConnector%28default-web-northcentralus%29 %282%29.pubxml" />
-    <None Include="Properties\PublishProfiles\BESConnector%28default-web-northcentralus%29 %283%29.pubxml" />
-    <None Include="Properties\PublishProfiles\BESConnector%28default-web-northcentralus%29 %284%29.pubxml" />
-    <None Include="Properties\PublishProfiles\BESConnector%28default-web-northcentralus%29 %285%29.pubxml" />
-    <None Include="Properties\PublishProfiles\BESConnector%28default-web-northcentralus%29 %286%29.pubxml" />
-    <None Include="Properties\PublishProfiles\BESConnector%28default-web-northcentralus%29 %287%29.pubxml" />
-    <None Include="Properties\PublishProfiles\BESConnector%28default-web-northcentralus%29 %288%29.pubxml" />
-    <None Include="Properties\PublishProfiles\BESConnector%28Default-Web-NorthCentralUS%29.pubxml" />
+    <None Include="Properties\PublishProfiles\AzureMLConnector20160512051646 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\AzureMLConnectorf264 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
